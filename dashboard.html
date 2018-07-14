@@ -1,0 +1,88 @@
+
+<!DOCTYPE html>
+<html>
+	
+		<head>
+        	<meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+            <meta name="viewport" content="width=device-width, initial-scale=1">
+            
+            <!-- boostrap-->
+            <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+            <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/js/bootstrap.min.js" integrity="sha384-o+RDsa0aLu++PJvFqy8fFScvbHFLtbvScb8AjopnFD+iEQ7wo/CG0xlczd+2O/em" crossorigin="anonymous"></script>
+            <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/css/bootstrap.min.css" integrity="sha384-Smlep5jCw/wG7hdkwQ/Z5nLIefveQRIY9nfy6xoR1uRYBtpZgI6339F5dgvm/e9B" crossorigin="anonymous">
+            
+            <!--css-->
+            <link type="text/css" rel="stylesheet" href="dashboard.css">
+
+            <!-- js-->
+            <script type="text/javascript" src="script.js">
+
+            <!-- fontawesome 5.1.0 -->
+            <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css" integrity="sha384-lKuwvrZot6UHsBSfcMvOkWwlCMgc0TaWr+30HWe3a4ltaBwTZhyTEggF5tJv8tbt" crossorigin="anonymous">
+    </head>
+    <body>
+      <div class="container">
+
+          <!--- MENU HORIZONTAL    --->
+          <nav class="navbar navbar-dark fixed-top bg-dark flex-md-nowrap py-0 px-3 shadow">
+
+          <i class="fas fa-arrow-circle-left pointer" onclick="escondeMenu(0)" id="flecha0"></i>
+
+              <i class="fas fa-arrow-circle-right pointer d-none" onclick="escondeMenu(1)" id="flecha1"></i>
+
+              <a class="navbar-brand col-sm-2 text-right" href="##">Dashboard</a>
+
+              <a class="navbar-brand col-sm-4 text-right" href="##">Buscar por:</a>
+
+              <select name="algunselect" id="algunselect" onchange="$('.sidebar-sticky a.nav-link.active').trigger('click')" class="form-control form-control-dark col-sm-3 ml-auto">
+                <option value="" selected="selected"> --Todas-- </option>
+                ... opciones de mas que quieran
+              </select>
+
+              <input type="text" id="alguninput" onkeypress="abrirPOPover(event)" placeholder="Buscar..." aria-label="BUSCAR" class="form-control form-control-dark mx-3 col-sm-2"/>
+
+              <button class="btn btn-secondary" onclick="buscarAlgo()" type="button">BUSCAR</button>
+
+              <i class="fa fa-spinner col-sm-2 fa-pulse fa-2x mr-2 d-none" id="searchLoad" style="color:white;"></i>
+
+          </nav>
+
+          <div class="container-fluid">
+              <div class="row">
+
+                <!--- MENU IZQUIERDO--->
+                  <nav class="col-md-2 d-none d-md-block bg-light sidebar">
+                      <div class="sidebar-sticky">
+                        <ul class="nav flex-column">                    
+                          <li class="nav-item">
+                            <a class="nav-link" onclick="cargaInfoDashboard('loquequeramos','algun título');$('.sidebar-sticky a').removeClass('active');$(this).addClass('active')" href="##">
+                              <i class="fas fa-exclamation-triangle"></i>
+                              Algún menú
+                            </a>
+                          </li>
+                          <li class="nav-item">
+                            <a class="nav-link " onclick="cargaInfoDashboard('ejemplo','otro título');$('.sidebar-sticky a').removeClass('active');$(this).addClass('active')" href="##">
+                              <i class="fas fa-exclamation-triangle"></i>
+                              EJEMPLO
+                            </a>
+                          </li>
+                        </ul>
+                      </div>
+                  </nav>
+
+            <!--- FIN MENU IZQUIERDO--->
+
+                  <!--- PRINCIPAL--->
+                  <main role="main" class="col-sm-10 ml-sm-auto">            	
+
+                      <div id="main_title" class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom"></div>
+
+                      <div id="main_info"></div>               	
+
+                  </main>
+              </div>
+          </div>
+      </div>
+  </body>
+</html>
