@@ -1,7 +1,7 @@
 
 
 .fixed-top {
-    top: 45px;
+    top: 0px;
 	    width: 100%;
     /*left: 8%;    */
 	z-index: 101;
@@ -45,7 +45,7 @@
 
 .sidebar {
   position: fixed;
-  top: 85px;
+  top: 45px;
   bottom: 0;
   left: 0;
   z-index: 100; /* Behind the navbar */
